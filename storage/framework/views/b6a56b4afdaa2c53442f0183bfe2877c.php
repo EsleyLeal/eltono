@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="<?php echo e(csrf_token()); ?>">
 
-        <title><?php echo e(config('app.name', 'Laravel')); ?></title>
+        <title><?php echo e(('Quel é o tom ?')); ?></title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
@@ -13,7 +13,7 @@
 
         <!-- Scripts -->
         <?php echo app('Illuminate\Foundation\Vite')(['resources/css/app.css', 'resources/js/app.js']); ?>
-        
+
 
         <!-- Styles -->
         <?php echo \Livewire\Mechanisms\FrontendAssets\FrontendAssets::styles(); ?>
@@ -61,7 +61,7 @@ if (isset($__slots)) unset($__slots);
 
             <!-- Page Heading -->
             <?php if(isset($header)): ?>
-                <header class="bg-white dark:bg-gray-800 shadow">
+                <header class="bg-teal-950 dark:bg-gray-800 shadow">
                     <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
                         <?php echo e($header); ?>
 

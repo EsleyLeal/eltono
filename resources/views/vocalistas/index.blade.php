@@ -4,9 +4,9 @@
 
         @if (auth()->user()->role === 'admin')
             <button
-                class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800">
+                class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-900 to-green-800 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800">
                 <span
-                    class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+                    class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white font-bold dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
                     <a href="{{ route('vocalistas.create') }}">CADASTRAR NOVO LOUVOR</a>
             </button>
         @else
@@ -15,8 +15,8 @@
 
 
     </x-slot>
-
-    <div class="py-12"> {{-- Div Principal --}}
+                    {{-- Cor do Body --}}
+    <div class="bg-slate-900 py-12"> {{-- Div Principal --}}
 
         {{-- Formulario de pesquisa --}}
         <form action="{{ route('dashboard') }}" method="GET" class="flex my-4 gap-4 max-w-7xl mx-auto sm:px-6 lg:px-8">
@@ -37,11 +37,11 @@
             </select>
 
             <button type="submit"
-                class="bg-green-500 dark:bg-green-700 hover:bg-green-600 dark:hover:bg-green-800 text-white font-bold py-2 px-4 rounded mr-2 text-base">Filtrar
+                class="bg-green-500 dark:bg-green-700 hover:bg-green-600 dark:hover:bg-green-800 text-black font-bold py-2 px-4 rounded mr-2 text-base">Filtrar
             </button>
 
             <a href="{{ route('dashboard') }}"
-                class="bg-yellow-500 dark:bg-yellow-700 hover:bg-yellow-600 dark:hover:bg-yellow-800 text-white font-bold py-2 px-4 rounded mr-2 text-base">Limpar
+                class="bg-yellow-500 dark:bg-yellow-700 hover:bg-yellow-600 dark:hover:bg-yellow-800 text-black font-bold py-2 px-4 rounded mr-2 text-base">Limpar
                 Filtro</a>
 
             <td class="border  border-slate-950 px-4 py-2 text-gray-900 dark:text-gray-900 ">
@@ -50,7 +50,7 @@
                 <div class="flex-col items-center justify-center overflow-hidden py-2 px-4 z-50">
                     <div>
                         <label for="tw-modal {{ isset($vocalista) ? $vocalista->id : '' }}"
-                            class="cursor-pointer hover:underline rounded bg-green-700 px-8 py-4 text-white active:bg-slate-400 ">
+                            class="cursor-pointer hover:underline rounded bg-green-500 px-8 py-4 text-black font-bold active:bg-slate-400 ">
                             LISTA DO DIA
                         </label>
 
@@ -81,7 +81,7 @@
                 </div>
 
             </td>
-            <a href="{{ 'gerar-pdf' }}" class="bg-yellow-300 dark:bg-yellow-700 hover:bg-yellow-600 dark:hover:bg-yellow-800 text-white font-bold py-2 px-4 rounded">
+            <a href="{{ 'gerar-pdf' }}" class="bg-yellow-500 dark:bg-yellow-700 hover:bg-yellow-600 dark:hover:bg-yellow-800 text-black font-bold py-2 px-4 rounded">
                 GERAR PDF
             </a>
 
@@ -90,7 +90,7 @@
 
         {{-- Final Formulario de pesquisa com filtro --}}
 
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <div class=" max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-xl sm:rounded-lg">
                 <table class="table-auto w-full">
 
@@ -143,10 +143,10 @@
                                 <td class="border border-slate-950 px-4 py-2 ">
                                     <div class="flex justify-center">
                                         <a href="{{ route('vocalistas.edit', $vocalista->id) }}"
-                                            class="bg-blue-500 dark:bg-blue-700 hover:bg-blue-600 dark:hover:bg-blue-800 text-white font-bold py-2 px-4 rounded mr-2">Editar</a>
+                                            class="bg-blue-700 dark:bg-blue-700 hover:bg-blue-600 dark:hover:bg-blue-800 text-white font-bold py-2 px-4 rounded mr-2">Editar</a>
 
                                             <button
-                                            class="bg-green-500 dark:bg-green-700 hover:bg-green-600 dark:hover:bg-green-800 text-white font-bold py-2 px-4 rounded mr-2 text-base btn-add-lista"
+                                            class="bg-green-700 dark:bg-green-700 hover:bg-green-600 dark:hover:bg-green-800 text-white font-bold py-2 px-4 rounded mr-2 text-base btn-add-lista"
                                             data-id="{{ $vocalista->id }}"
                                             nome_vocalista="{{ $vocalista->nome_vocalista }}"
                                             nome_louvor="{{ $vocalista->nome_louvor }}"

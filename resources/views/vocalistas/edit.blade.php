@@ -1,35 +1,36 @@
 <x-app-layout>
     <x-slot name="header">
-        <div class="flex justify-between dark:text-white">
-            {{ __('ÁREA DE EDIÇÃO') }} <button
-            class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800">
-            <span
-                class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+        <button class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-900 to-green-800 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800">
+            <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white font-bold dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
                 <a href="{{ route('vocalistas.index') }}">VOLTAR A LOUVORES CADASTRADOS</a>
-        </button>
-        </div>
+            </span>
+            </button>
     </x-slot>
 
-    <div class="py-12">
+    <div class="bg-slate-900 py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-xl sm:rounded-lg">
+                <div class="font-mono text-center pt-3.5 text-xl font-bold dark:text-white drop-shadow-xl ">
+                    {{ __('ÁREA DE EDIÇÃO') }}
+                </div>
+
 
                 <form action="{{ route('vocalistas.update', $vocalista->id) }}" method="POST" class="flex flex-col p-36">
                     @csrf
                     @method('PUT')
 
-                    <label class="text-indigo-950 m-4 dark:text-white text-lg" for="nome_vocalista">Vocalista</label>
+                    <label class="text-slate-950 m-4 dark:text-white text-lg font-bold text-center" for="nome_vocalista">Vocalista</label>
                     <input type="text" name="nome_vocalista"
                         value="{{ old('nome_vocalista', $vocalista->nome_vocalista) }}">
 
-                    <label class="text-indigo-950 m-4 dark:text-white text-lg" for="nome_louvor">Louvor</label>
+                    <label class="text-slate-950 m-4 dark:text-white text-lg font-bold text-center" for="nome_louvor">Louvor</label>
                     <input type="text" name="nome_louvor" value="{{ old('nome_louvor', $vocalista->nome_louvor) }}">
 
-                    <label class="text-indigo-950 m-4 dark:text-white text-lg" for="nome_versao_louvor">Versão</label>
+                    <label class="text-slate-950 m-4 dark:text-white text-lg font-bold text-center" for="nome_versao_louvor">Versão</label>
                     <input type="text" name="nome_versao_louvor"
                         value="{{ old('nome_louvor_louvor', $vocalista->nome_versao_louvor) }}">
 
-                    <label class="text-indigo-950 m-4 dark:text-white text-lg" for="tonalidade">Tonalidade</label>
+                    <label class="text-slate-950 m-4 dark:text-white text-lg font-bold text-center" for="tonalidade">Tonalidade</label>
                     <select name="tonalidade" value="{{ old('tonalidade', $vocalista->tonalidade) }}" for="tonalidade"
                         class="form-select">
 
@@ -100,7 +101,7 @@
 
                     <br>
                     <button type="submit"
-                        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Salvar</button>
+                        class="text-white bg-teal-800 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Salvar</button>
                     <br>
                     <a href="{{ route('vocalistas.index') }}"
                         class="text-white bg-slate-700 hover:bg-slate-800 focus:ring-4 focus:outline-none focus:ring-slate-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-slate-600 dark:hover:bg-slate-700 dark:focus:ring-slate-800">Cancelar</a>
